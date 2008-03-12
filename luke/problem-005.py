@@ -7,8 +7,11 @@ from EulerLibs import MathLibs
 # @return int
 def product_1_to_x(x):
 	resp = 1
-	for i in range(2,x):
-		resp *= i
+	while x >= 1:
+		if resp % x:
+			resp *= x
+			
+		x -= 1
 	
 	return resp
 	
@@ -21,10 +24,12 @@ for i in MathLibs.factors(common_factor):
 	while j <= 20 and not disproven:
 		if i % j:
 			disproven = True
-		j += 1
-		
+			
 		if j == 20:
 			answer = i
+
+		j += 1
+		
 	
 	if answer:
 		break
