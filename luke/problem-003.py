@@ -6,15 +6,13 @@ def factors(x):
 	factors = []
 	
 	i = 1
-	while True:
+	while i <= math.ceil(math.sqrt(x)):
 		if not x % i:
 			if not factors.count(i):
 				factors.append(i)
 				if not factors.count(x / i): # don't add perfect squares twice
 					factors.append(x / i)
 				factors.sort()
-			else:
-				break
 		
 		i += 1
 			
@@ -22,7 +20,7 @@ def factors(x):
 	
 def isPrime(x):
 	i = 2
-	while i <= math.ceil(x / 2):
+	while i <= math.ceil(math.sqrt(x)):
 		if not x % i:
 			return False
 			
