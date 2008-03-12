@@ -3,9 +3,9 @@
 import math
 from EulerLibs import MathLibs
 
-# find the product of all numbers between 1 and x
+# Find a common denominator of 1 to x
 # @return int
-def product_1_to_x(x):
+def common_denom(x):
 	resp = 1
 	while x >= 1:
 		if resp % x:
@@ -15,7 +15,7 @@ def product_1_to_x(x):
 	
 	return resp
 	
-common_factor = product_1_to_x(20)
+common_factor = common_denom(20)
 	
 answer = 0
 for i in MathLibs.factors(common_factor):
