@@ -1,19 +1,13 @@
 #!/usr/bin/env python
 # http://projecteuler.net/index.php?section=problems&id=4
 import math
+from EulerLibs import StrLibs
 
-def is_palindrome(s):
-	i = 0
-	while i <= math.ceil(len(s) / 2):
-		if not s[i] == s[len(s) - i - 1]:
-			return False;
-		i += 1
-	return True
 	
 i = 999 * 999
 answer = 0
 while True:
-	if is_palindrome(str(i)):
+	if StrLibs.isPalindrome(str(i)):
 		# check and see if it is the product of two three-digit numbers
 		j = 999
 		while j >= 100:
