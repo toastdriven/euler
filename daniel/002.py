@@ -1,10 +1,7 @@
 #!/usr/bin/env python
-def fib(prev, current):
-    while True:
-        (prev, current) = (current, prev + current)
-        yield prev
+from useful_euler import PEMath
 
-f = fib(1, 1)
+f = PEMath.fib(1, 1)
 the_sum, current = 0, 0
 
 while current <= 4000000:
