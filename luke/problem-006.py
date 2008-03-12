@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# http://projecteuler.net/index.php?section=problems&id=5
+# http://projecteuler.net/index.php?section=problems&id=6
 import math
 
 sum_of_squares = 0
