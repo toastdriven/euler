@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-from useful_euler import PEMath
+from useful_euler import fib
 
-f = PEMath.fib(1, 1)
+f = fib(1, 1)
 the_sum, current = 0, 0
 
 while current <= 4000000:
