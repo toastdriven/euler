@@ -4,6 +4,7 @@
 import math
 
 class MathLibs:
+	@staticmethod
 	def factors(x):
 		factors = []
 
@@ -19,8 +20,8 @@ class MathLibs:
 			i += 1
 
 		return factors
-	factors = staticmethod(factors)
 
+	@staticmethod
 	def isPrime(x):
 		# special case
 		if x == 2:
@@ -34,9 +35,14 @@ class MathLibs:
 			i += 1
 
 		return True
-	isPrime = staticmethod(isPrime)
+		
+	@staticmethod
+	def pfactorial(x):
+		return reduce(lambda x, y: x * y, [i for i in range(1, int(x) + 1)])
+		
 	
 class StrLibs:
+	@staticmethod
 	def isPalindrome(s):
 		i = 0
 		while i <= math.ceil(len(s) / 2):
@@ -44,4 +50,7 @@ class StrLibs:
 				return False;
 			i += 1
 		return True
-	isPalindrome = staticmethod(isPalindrome)
+
+	@staticmethod
+	def sumDigits(s):
+		return int(reduce(lambda x, y: int(x) + int(y), s))
