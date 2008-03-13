@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 
-import math
+length = 2000000
+list = range(length + 1)
 
-primes = []
+list[1] = 0
+for i in xrange(2, length + 1):
+    if list[i] <> 0:
+        for x in xrange(i * 2, length + 1, i):
+            list[x] = 0
 
-def isPrime(num):
-    for prime in primes:
-        if not num % prime:
-            return False
-    primes.append(num)
-    return True
-
-
-print sum((i for i in xrange(2, 2000000) if isPrime(i)))
+print sum(list)
