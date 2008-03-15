@@ -37,8 +37,13 @@ class MathLibs:
 		return True
 		
 	@staticmethod
-	def pfactorial(x):
+	def factorial(x):
 		return reduce(lambda x, y: x * y, [i for i in range(1, int(x) + 1)])
+		
+		
+	@staticmethod
+	def triangleNumber(x):
+		return reduce(lambda x, y: x + y, [i for i in range(1, int(x) + 1)])
 		
 	
 class StrLibs:

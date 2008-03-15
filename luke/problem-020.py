@@ -3,6 +3,6 @@
 import math
 from EulerLibs import MathLibs,StrLibs
 
-pf100 = str(MathLibs.pfactorial(100))
-answer = StrLibs.sumDigits(pf100)
+f100 = str(MathLibs.factorial(100))
+answer = StrLibs.sumDigits(f100)
 print answer
