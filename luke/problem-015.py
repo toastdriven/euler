@@ -20,6 +20,7 @@ def get_permutations_faster(size):
 	else:
 		result = 0
 		result += get_permutations_faster(size - 1)
+		# sets beginning with the same movement (right or down) twice are ((size - 1) / size) as large as the sets acquired above		
 		result *= (2 * size - 1)
 		result /= size
 		result *= 2
