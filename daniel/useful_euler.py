@@ -3,7 +3,7 @@ import math
 
 def is_prime(number):
     """Determines if a number is prime or not."""
-    for i in range(2, int(math.ceil(math.sqrt(number)))):
+    for i in xrange(2, int(math.ceil(math.sqrt(number)))):
         if number % i == 0.0:
             return False
 
@@ -35,7 +35,26 @@ def is_palindrome(string, case_insensitive=False):
     if case_insensitive:
         string = string.lower()
     
-    half_length = int(math.floor(len(string) / 2))
+    half_length = int(len(string) // 2)
     first = string[0:half_length]
     last = string[(len(string) - half_length):]
     return first == last[::-1]
+
+def triangle_number(max_number):
+    """Calculates a triangle number."""
+    return sum(xrange(1, max_number + 1))
+
+def factors(number):
+    """Calculate all the factors for a given number."""
+    factors = []
+    
+    if number == 1:
+        factors.append(1)
+    
+    for i in xrange(1, int(math.ceil(math.sqrt(number)))):
+        if number % i == 0.0:
+            factors.append(i)
+            factors.append(number / i)
+
+    factors.sort()
+    return factors
