@@ -3,6 +3,8 @@
 import math
 from EulerLibs import MathLibs
 
+print MathLibs.factorial(500)
+
 factors = 0
 cursor = 0
 while (factors <= 500):

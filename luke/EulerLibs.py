@@ -43,7 +43,17 @@ class MathLibs:
 		
 	@staticmethod
 	def triangleNumber(x):
-		return reduce(lambda x, y: x + y, [i for i in range(1, int(x) + 1)])
+		return x * (x + 1) / 2
+		#return reduce(lambda x, y: x + y, [i for i in range(1, int(x) + 1)])
+		
+	@classmethod
+	def sumOfDivisors(cls, x):
+		factors = cls.factors(x)
+		if len(factors):
+			factors.pop()
+			return sum(factors)
+		else:
+			return 0
 		
 	
 class StrLibs:

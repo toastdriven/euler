@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# http://projecteuler.net/index.php?section=problems&id=12
+# http://projecteuler.net/index.php?section=problems&id=21
 import math
 from EulerLibs import MathLibs
 
