@@ -23,7 +23,10 @@ class MathLibs:
 
 	@staticmethod
 	def isPrime(x):
-		# special case
+		# special cases
+		if x <= 1:
+			return False
+		
 		if x == 2:
 			return True
 		
@@ -66,6 +69,23 @@ class StrLibs:
 			i += 1
 		return True
 
+
 	@staticmethod
 	def sumDigits(s):
 		return int(reduce(lambda x, y: int(x) + int(y), s))
+		
+	
+	@staticmethod
+	def wordValue(s):
+		s = str(s).upper()
+				
+		letters = [chr(i) for i in range(ord("A"), ord("Z") + 1)]
+		letters.insert(0, None)
+
+		i = 0
+		value = 0
+		while i < len(s):
+			value += letters.index(s[i])
+			i += 1
+			
+		return value
