@@ -6,7 +6,7 @@ from EulerLibs import StrLibs
 class customDialect(csv.Dialect):
 	delimiter = ','
 	doublequote = False
-	escapechar = '\\'.
+	escapechar = '\\'
 	lineterminator = "\n"
 	quotechar = '"'
 	quoting = False
