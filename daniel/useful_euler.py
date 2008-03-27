@@ -58,3 +58,11 @@ def factors(number):
 
     factors.sort()
     return factors
+
+def factorial(number):
+    product = 1
+    
+    for i in xrange(1, number + 1):
+        product *= i
+    
+    return product
