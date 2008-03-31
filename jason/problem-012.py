@@ -3,7 +3,8 @@
 from MyMath import *
 
 i = 1
-while (len(factors(i)) <= 500):
+answer = 1
+while len(factors(answer)) <= 500:
 	i += 1
 	answer = triangleNumber(i)
 	
