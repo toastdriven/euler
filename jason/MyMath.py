@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import operator
 
 def primes(n):
     """Returns the primes up to n."""
@@ -29,6 +30,7 @@ def factors(num):
     
     if num == 1:
         factors.append(1)
+        return factors
     
     for i in xrange(1, int(num**0.5)+1):
         if not num % i:
@@ -36,3 +38,7 @@ def factors(num):
             factors.append(num / i)
 
     return factors
+
+def fact(num):
+    """ Returns a numbers factorial."""
+    return reduce(operator.mul, xrange(2, num + 1))
