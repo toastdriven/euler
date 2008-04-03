@@ -27,18 +27,35 @@ def triangleNumber(n):
 def factors(num):
     """Determine the factors of a number."""
     factors = []
-    
+
     if num == 1:
         factors.append(1)
         return factors
-    
+
     for i in xrange(1, int(num**0.5)+1):
         if not num % i:
             factors.append(i)
-            factors.append(num / i)
+            if(i != num/ i):
+                factors.append(num / i)
 
     return factors
 
+def divisors(num):
+    """Determine the integer divisors for a number."""
+    divs = factors(num)
+    divs.remove(num)
+    return divs
+
 def fact(num):
-    """ Returns a numbers factorial."""
+    """ Returns a number's factorial."""
     return reduce(operator.mul, xrange(2, num + 1))
+
+def isAbundant(num):
+    return sum(divisors(num)) > num
+
+def abundants(num):
+    """Returns a list of abundant numbes less than num."""
+    if num >= 12:
+        return [i for i in xrange(12, num + 1) if isAbundant(i)]
+    else:
+        return []
