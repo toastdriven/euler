@@ -68,7 +68,7 @@ class StrLibs:
 				return False;
 			i += 1
 		return True
-
+		
 
 	@staticmethod
 	def sumDigits(s):
