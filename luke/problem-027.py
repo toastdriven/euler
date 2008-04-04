@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# http://projecteuler.net/index.php?section=problems&id=23
+# http://projecteuler.net/index.php?section=problems&id=27
 from EulerLibs import MathLibs
 
 most_primes = { 'a': 1, 'b': 41, 'primes': 40 }
