@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import operator
+import math
 
 def primes(n):
     """Returns the primes up to n."""
@@ -38,6 +39,22 @@ def factors(num):
             if(i != num/ i):
                 factors.append(num / i)
 
+    return factors
+
+def primeFactors(num):
+    """Determine the prime factors of a number."""
+    factors = {}                           
+    i = 2
+    while i <= num**0.5:
+        if num % i == 0:
+            factors[i] = factors.get(i, 0) + 1
+            num /= i
+        elif i == 2:
+            i = 3
+        else:
+            i += 2
+    factors[num] = factors.get(num, 0) + 1
+    
     return factors
 
 def divisors(num):
