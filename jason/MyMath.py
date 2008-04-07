@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import operator
 import math
+import copy
 
 def primes(n):
     """Returns the primes up to n."""
@@ -43,7 +44,7 @@ def factors(num):
 
 def primeFactors(num):
     """Determine the prime factors of a number."""
-    factors = {}                           
+    factors = {}
     i = 2
     while i <= num**0.5:
         if num % i == 0:
@@ -54,7 +55,31 @@ def primeFactors(num):
         else:
             i += 2
     factors[num] = factors.get(num, 0) + 1
-    
+
+    return factors
+
+def fastFactors(num):
+    """Determine the factors of a number."""
+    factors = {}
+    i = 2
+    while i <= num:
+        if num % i == 0:
+            factors_copy = copy.copy(factors)
+            for factor in factors_copy:
+                factors[factor * i] = True
+
+            factors[i] = True
+            num /= i
+        elif i == 2:
+            i = 3
+        else:
+            i += 2
+
+    factors_copy = copy.copy(factors)
+    for factor in factors_copy:
+        factors[factor * i] = True
+    factors[1] = True
+
     return factors
 
 def divisors(num):
@@ -76,3 +101,6 @@ def abundants(num):
         return [i for i in xrange(12, num + 1) if isAbundant(i)]
     else:
         return []
+
+print factors(1525)
+print fastFactors(1525).keys()
