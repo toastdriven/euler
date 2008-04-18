@@ -60,9 +60,20 @@ def factors(number):
     return factors
 
 def factorial(number):
+    """Produces a fatorial for the given number."""
     product = 1
     
     for i in xrange(1, number + 1):
         product *= i
     
     return product
+
+def convert_string_to_array(the_string):
+    """Takes a space separated, multi-line structure and parse it into an array."""
+    intermediate_structure = the_string.split("\n")
+    final_array = []
+    
+    for row in intermediate_structure:
+        final_array.append(row.split())
+    
+    return final_array
